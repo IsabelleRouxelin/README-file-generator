@@ -1,6 +1,6 @@
 from InquirerPy import prompt
 from InquirerPy.base.control import Choice
-from InquirerPy.separator import Separator
+from InquirerPy.separator import Separator # not sure needed - maybe a rule instead
 from rich.console import Console
 from rich.panel import Panel
 from rich.progress import Progress
@@ -38,7 +38,7 @@ def progress_bar():
 
 def readme_content():
     console.print("[bold cyan]Generated README.md content[/bold cyan]")
-    print(user_input) #need to format this - maybe seperator?
+    print(user_input) #need to format this - maybe seperator or rule?
 
 
 if __name__ == "__main__":
