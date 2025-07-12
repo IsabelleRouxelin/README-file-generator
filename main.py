@@ -1,4 +1,5 @@
 from InquirerPy import prompt
+from InquirerPy.base.control import Choice
 from rich.console import Console
 from rich.panel import Panel
 from rich.progress import Progress
@@ -33,7 +34,7 @@ questions = [
         "message": "Enter usage information:"
     },
     {
-        "type": "input", 
+        "type": "list", 
         "name": "license", 
         "message": "Choose a license for your project:", 
         "choices": ["MIT", "Apache 2.0", "Mozilla 2.0",  "GNU LGPL v3", "GNU GPL v3", "Creative Commons", "Unlicense"]
@@ -46,7 +47,7 @@ questions = [
     {
         "type": "input", 
         "name": "email address", 
-        "email address": "Enter your email address:"},
+        "message": "Enter your email address:"},
 ]
 answers = prompt(questions)
 print(answers)
