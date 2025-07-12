@@ -8,51 +8,29 @@ import time
 console = Console()
 
 #welcome message
-console.print("[bold green]Welcome to the README Generator![/bold green]\n"
-              "[green]This tool aims to help you create a professional README.md file for all projects[/green]")
+console.print("[bold magenta]Welcome to the README Generator![/bold magenta]\n"
+              "[magenta]This tool aims to help create a README.md file for all projects[/magenta]")
 
 #user input
 questions = [
-    {
-        "type": "input", 
-        "name": "title", 
-        "message": "What is the title of your project?"
-    },
-    {
-        "type": "input", 
-        "name": "description", 
-        "message": "Enter a description for your project:"
-    },
-    {
-        "type": "input", 
-        "name": "installation", 
-        "message": "Enter installation instructions:"
-    },
-    {
-        "type": "input", 
-        "name": "usage", 
-        "message": "Enter usage information:"
-    },
-    {
-        "type": "list", 
-        "name": "license", 
-        "message": "Choose a license for your project:", 
-        "choices": ["MIT", "Apache 2.0", "Mozilla 2.0",  "GNU LGPL v3", "GNU GPL v3", "Creative Commons", "Unlicense"]
-    }, #needs to be a dropdown 
-    {
-        "type": "input", 
-        "name": "author", 
-        "message": "Enter your name:"
-    },
-    {
-        "type": "input", 
-        "name": "email address", 
-        "message": "Enter your email address:"},
+    {"type": "input", "name": "title", "message": "What is the title of your project?"},
+    {"type": "input", "name": "description", "message": "Enter a description for your project:"},
+    {"type": "input", "name": "installation",  "message": "Enter installation instructions:"},
+    {"type": "input", "name": "usage", "message": "Enter usage information:"},
+    {"type": "list", "name": "license", "message": "Choose a license for your project:", "choices": ["MIT", "Apache 2.0", "Mozilla 2.0",  "GNU LGPL v3", "GNU GPL v3", "Creative Commons", "Unlicense"]},
+    {"type": "input", "name": "author", "message": "Enter your name & contact information:"},
 ]
 answers = prompt(questions)
-print(answers)
 
-#progress bar ?
+with Progress() as progress:
+    task = progress.add_task("[bold green]Generating README...", total=100)
+    for _ in range(10):
+        time.sleep(0.3)
+        progress.update(task, advance=10)
+
+console.print("[bold cyan]Generated README.md content[/bold cyan]")
+print(answers) #need to format this - maybe seperator?
+
 
 
 
