@@ -1,4 +1,4 @@
-from PyInquirer import prompt
+from InquirerPy import prompt
 from rich.console import Console
 from rich.panel import Panel
 from rich.progress import Progress
@@ -12,15 +12,44 @@ console.print("[bold green]Welcome to the README Generator![/bold green]\n"
 
 #user input
 questions = [
-    {"type": "input", "name": "title", "message": "What is the title of your project?"},
-    {"type": "input", "name": "description", "message": "Enter a description for your project:"},
-    {"type": "input", "name": "installation", "message": "Enter installation instructions:"},
-    {"type": "input", "name": "usage", "message": "Enter usage information:"},
-    {"type": "input", "name": "license", "message": "Choose a license for your project:"}, #needs to be a dropdown 
-    {"type": "input", "name": "author", "message": "Enter your name:"},
-    {"type": "input", "name": "name", "contact": "Enter your email address:"},
+    {
+        "type": "input", 
+        "name": "title", 
+        "message": "What is the title of your project?"
+    },
+    {
+        "type": "input", 
+        "name": "description", 
+        "message": "Enter a description for your project:"
+    },
+    {
+        "type": "input", 
+        "name": "installation", 
+        "message": "Enter installation instructions:"
+    },
+    {
+        "type": "input", 
+        "name": "usage", 
+        "message": "Enter usage information:"
+    },
+    {
+        "type": "input", 
+        "name": "license", 
+        "message": "Choose a license for your project:", 
+        "choices": ["MIT", "Apache 2.0", "Mozilla 2.0",  "GNU LGPL v3", "GNU GPL v3", "Creative Commons", "Unlicense"]
+    }, #needs to be a dropdown 
+    {
+        "type": "input", 
+        "name": "author", 
+        "message": "Enter your name:"
+    },
+    {
+        "type": "input", 
+        "name": "email address", 
+        "email address": "Enter your email address:"},
 ]
 answers = prompt(questions)
+print(answers)
 
 #progress bar ?
 

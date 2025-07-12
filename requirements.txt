@@ -1,2 +1,2 @@
 rich
-PyInquirer
+InquirerPy
