@@ -1,8 +1,28 @@
-from InquirerPy import prompt
+from PyInquirer import prompt
 from rich.console import Console
-from rich.table import Table
+from rich.panel import Panel
 from rich.progress import Progress
 import time
+
+console = Console()
+
+#welcome message
+console.print("[bold green]Welcome to the README Generator![/bold green]\n"
+              "[green]This tool aims to help you create a professional README.md file for all projects[/green]")
+
+#user input
+questions = [
+    {"type": "input", "name": "title", "message": "What is the title of your project?"},
+    {"type": "input", "name": "description", "message": "Enter a description for your project:"},
+    {"type": "input", "name": "installation", "message": "Enter installation instructions:"},
+    {"type": "input", "name": "usage", "message": "Enter usage information:"},
+    {"type": "input", "name": "license", "message": "Choose a license for your project:"}, #needs to be a dropdown 
+    {"type": "input", "name": "author", "message": "Enter your name:"},
+    {"type": "input", "name": "name", "contact": "Enter your email address:"},
+]
+answers = prompt(questions)
+
+#progress bar ?
 
 
 
