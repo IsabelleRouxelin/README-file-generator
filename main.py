@@ -6,6 +6,7 @@ from rich.panel import Panel
 from rich.progress import Progress
 import time
 
+README_FILE = "README.md"
 console = Console()
 
 def main():
@@ -20,7 +21,10 @@ def main():
   
     answers = user_input() # user input
     progress_bar() #show progress
-    readme_content(answers) #generate readme
+    content = readme_content(answers) #generate readme
+    write_readme(content) #write readme.md
+    console.print(f"[bold magenta]README.md has been successfully created![/bold magenta]")
+
 #user input
 def user_input():
     questions = [
@@ -56,14 +60,19 @@ def readme_content(answers):
 {answers['usage']}
 
 ## License
-{answers['license']}
+This project is licensed under the {answers['license']} License.
 
 ## Author
 {answers['author']}
 """
-    console.print(readme_text)
-    console.print("-" * 50)
-    
+    console.print(Panel(readme_text, title="Generated README", border_style="blue"))
+    return readme_text 
+
+def write_readme(content):
+    """Write README content to file"""
+    with open("README.md", "w", encoding="utf-8") as readme_file:
+        readme_file.write(content)
+
 
 if __name__ == "__main__": # NB ensures code runs only when executed directly 
     main()
