@@ -1,2 +1,22 @@
 # README-file-generator
-a python README file generator
+This Python script generates a README.md file based on user input using InquirerPy for interactive prompts and Rich for enhanced terminal output.
+
+## Technologies used:
+- Python
+- InquirerPy - interative prompts
+- Rich - styled output
+
+## Key features 
+- Interactive CLI: Uses InquirerPy for easy user input.
+- Styled Output: Enhances terminal interaction with Rich.
+- README Creation: Generates a professional README.md
+- License Selection: Offers a list of common open-source licenses.
+- Contact Information: Allows users to add author details.
+
+## Installation
+- clone repository
+- pip install -r requirements.txt
+
+## Auther
+ - Isabelle Rouxelin
+  
