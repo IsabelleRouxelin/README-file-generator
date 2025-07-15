@@ -68,6 +68,7 @@ This project is licensed under the {answers['license']} License.
     console.print(Panel.fit(readme_text, title="Generated README", border_style="blue"))
     return readme_text 
 
+#writes readme file
 def write_readme(content):
     """Write README content to file"""
     with open("README.md", "w", encoding="utf-8") as readme_file:
