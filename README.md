@@ -7,11 +7,11 @@ This Python script generates a README.md file based on user input using Inquirer
 - Rich - styled output
 
 ## Key features 
-- Interactive CLI: Uses InquirerPy for easy user input.
-- Styled Output: Enhances terminal interaction with Rich.
-- README Creation: Generates a professional README.md
+- Interactive Command Line Interface (CLI): Uses InquirerPy for easy user input.
+- Styled Output: terminal interaction with Rich.
 - License Selection: Offers a list of common open-source licenses.
 - Contact Information: Allows users to add author details.
+- README Creation: Generates a professional README.md
 
 ## Installation
 - clone repository
@@ -19,4 +19,3 @@ This Python script generates a README.md file based on user input using Inquirer
 
 ## Auther
  - Isabelle Rouxelin
-  
