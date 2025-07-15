@@ -65,7 +65,7 @@ This project is licensed under the {answers['license']} License.
 ## Author
 {answers['author']}
 """
-    console.print(Panel(readme_text, title="Generated README", border_style="blue"))
+    console.print(Panel.fit(readme_text, title="Generated README", border_style="blue"))
     return readme_text 
 
 def write_readme(content):
