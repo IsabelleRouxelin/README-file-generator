@@ -1,22 +1,26 @@
 from InquirerPy import prompt
 from InquirerPy.base.control import Choice
-from InquirerPy.separator import Separator # not sure needed - maybe a rule instead
+from InquirerPy.separator import Separator 
 from rich.console import Console
 from rich.panel import Panel
 from rich.progress import Progress
 import time
 
-def main():
-    console = Console()
+console = Console()
 
-#welcome message
+def main():
+#calling the functions - explains the workflow - makes code modular
+    #welcome message
     console.print(Panel.fit(
         "[bold magenta]Welcome to the README Generator![/bold magenta]\n"
         "[magenta]This tool aims to help create a README.md file for all projects[/magenta]",
         title= "README Generator",
         border_style="green"
     ))
-
+  
+    answers = user_input() # user input
+    progress_bar() #show progress
+    readme_content(answers) #generate readme
 #user input
 def user_input():
     questions = [
@@ -36,21 +40,31 @@ def progress_bar():
             time.sleep(0.3)
             progress.update(task, advance=10)
 
-def readme_content():
+def readme_content(answers):
     console.print("[bold cyan]Generated README.md content[/bold cyan]")
-    print(user_input) #need to format this - maybe seperator or rule?
+    console.print("-" * 50) 
 
+# Formats the README content
+    readme_text = f"""# {answers['title']}
+## Description
+{answers['description']}
 
-if __name__ == "__main__":
+## Installation
+{answers['installation']}
+
+## Usage
+{answers['usage']}
+
+## License
+{answers['license']}
+
+## Author
+{answers['author']}
+"""
+    console.print(readme_text)
+    console.print("-" * 50)
+    
+
+if __name__ == "__main__": # NB ensures code runs only when executed directly 
     main()
 
-
-#get user input - including title, description, installation, usage, license, author, and contact info.
-#A dropdown list is used to select a license type.
-#A `README.md` file is generated using GitHub markdown format based on the user's input.
-# The codebase is structured using classes and organized into modules.
-#A `requirements.txt` file is included listing all dependencies (including `PyInquirer`).
-# A virtual environment is used for the project, and its setup is documented.
-# Instructions for running the application are included.
-#A demo video of the script running is submitted.
-#A link to the GitHub repository is included with the submission.
