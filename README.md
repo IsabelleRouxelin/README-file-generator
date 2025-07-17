@@ -17,5 +17,5 @@ This Python script generates a README.md file based on user input using Inquirer
 - clone repository
 - pip install -r requirements.txt
 
-## Auther
+## Author
  - Isabelle Rouxelin
